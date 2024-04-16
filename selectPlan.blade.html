@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://sb-web-qa-03.snipback.com/assets/css/Bootstrap v5.1.2.css">
+    <title>select-plan</title>
+</head>
+<body>
+    <div class="pricing-container" id="select-plan" style="">
+        <div class="priceWrap">
+            <div class="mainSection container">
+                <div class="select-plan d-flex flex-row justify-content-between w-100 align-items-start">
+                    <div class="select-item-wrap flex-column justify-content-center align-items-center d-flex">
+                        <div class="select-item box d-flex justify-content-center align-items-center active-box">1</div>
+                        <span class="select-item-text text-center">Create Your Org & Select Your Plan</span>
+                    </div>
+                    <div class="select-item-wrap flex-column justify-content-center align-items-center d-flex">
+                        <div class="select-item box d-flex justify-content-center align-items-center">2</div>
+                        <span class="select-item-text text-center">Create Your Super Admins</span>
+                    </div>
+                    <div class="select-item-wrap flex-column justify-content-center align-items-center d-flex">
+                        <div class="select-item box d-flex justify-content-center align-items-center ">3</div>
+                        <span class="select-item-text text-center">Select Program(s) & Teams/Groups</span>
+                    </div>
+                    <div class="select-item-wrap flex-column justify-content-center align-items-center d-flex">
+                        <div class="select-item box d-flex justify-content-center align-items-center">4</div>
+                        <span class="select-item-text text-center">Enter Your Payment Information</span>
+                    </div>
+                    <div class="select-item-wrap flex-column justify-content-center align-items-center d-flex">
+                        <div class="select-item box d-flex justify-content-center align-items-center">5</div>
+                        <span class="select-item-text text-center">Invite Your Program Admins</span>
+                    </div>
+                </div>
+                <div class="w-100 box bg-white select-form-wrap text-left">
+                    <div class="select-form-box">
+                        <h2 class="select-plan-heading d-flex align-items-start justify-content-start flex-column">
+                            <span class="heading-wrap"><span class="text-red">CREATE</span> YOUR ORGANIZATION & SELECT
+                                YOUR <span class="text-red">PLAN</span> </span>
+                            <span class="border-wrap"> <img src="./assets/images/pricing/border-btm.svg"></span>
+                        </h2>
+                        <h4 class="select-plan-title" id="org-header">Organization Info</h4>
+                        <div class="row form-wrap align-items-end" id="orgNameList">
+                            <span class="fs-16 mb-3 mt-2 text-danger mdeium text-center" id="org-info-err"></span>
+                                <div class="col-md-6">
+                                    <div class="mb-2">
+                                        <label for="orgName" class="form-label">Enter Your Organizations Names:</label>
+                                        <input type="text" name="org_name[]" class="form-control" id="orgName" aria-describedby="emailHelp">
+                                        <div class="error-message fs-16 mb-3 mt-2 text-danger mdeium text-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-2">
+                                        <p class="payment-info-radio-btn d-flex align-items-center">
+                                        <input class="form-check-input" type="checkbox" id="isParentOrganisation" name="isParentOrganisation" onchange="enableAddMoreOrganization()">
+                                        <label class="form-check-label checkbox-label" for="isParentOrganisation">
+                                            Parent Organization
+                                        </label>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 addMore"  style="display:none;">
+                                    <div class="mb-2">
+                                        <p class="payment-info-radio-btn d-flex align-items-center">
+                                        <a class="purchase-now" href="javascript:void(0)" onclick="addNameField()" >Add More</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                            <!-- <button type="button" onclick="addNameField()">Add More</button> -->
+                            <!-- <div class="col-md-6">
+                                <div class="mb-2">
+                                    <label for="orgAddress" class="form-label">Address</label>
+                                    <input type="text" name="org_address" class="form-control" id="orgAddress" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col-md-6 sm-mb-3">
+                                <div class="mb-2">
+                                    <label for="orgPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" name="org_phone" class="form-control phone-number" id="orgPhone" maxlength="25" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-2">
+                                    <label for="orgEmail" class="form-label">Email</label>
+                                    <input type="email" name="org_email" class="form-control" id="orgEmail" aria-describedby="emailHelp">
+                                </div>
+                            </div> -->
+                        </div>
+                        <h4 class="select-plan-title mb-0 pb-1">Select Your Plan</h4>
+                        <p class="content-size">All SnipBack Organization Plans include:</p>
+                    </div>
+                </div>
+                <div class="black-wrap box pro-plan">
+                    <div class="row">
+                        <div class="col-md-12 plan-select-wrapper">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="radio-group-wrap sm-mb-0">
+                                        <input type="radio" class="plan_type" id="test2" name="plan_type" data-amt="5" value="individual-plan" data-plan="Individual Accounts" data-plan-selection="3">
+                                        <label for="test2" class="d-flex flex-column">
+                                            <span class="radio-heading">Individual Accounts</span>
+                                            <span class="radio-title">No Team Features
+                                                <br>10GB Home Storage Included
+                                                <br>500GB   $5/month
+                                                <br>Stats $50/game
+                                            </span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="radio-group-wrap sm-mb-0">
+                                        <input type="radio" class="plan_type" id="test3" name="plan_type" data-amt="400" value="club-plan" data-plan="Club: $400/team" data-plan-selection="2">
+                                        <label for="test3" class="d-flex flex-column">
+                                            <span class="radio-heading">Club: $400/team</span>
+                                            <span class="radio-title">Club Stats Pricing:
+                                                <br>10 pack $250 ($25/game)
+                                                <br>25 pack $575 (save $50)
+                                                <br>50 pack $1,100 (save $150)
+                                            </span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p>
+                                        <input type="radio" class="plan_type" id="test4" name="plan_type" data-amt="500" value="highSchool-plan" data-plan="High School Only" data-plan-selection="1">
+                                        <label for="test4" class="d-flex flex-column">
+                                            <span class="radio-heading">High School Only</span>
+                                            <span class="radio-group-sub-title">Single Team: $500</span>
+                                                <span class="radio-group-sub-text">5 Pack: $2,000</span>
+                                                <span class="radio-group-sub-text">10 Pack: $3,500</span>
+                                                <span class="radio-group-sub-text">25 Pack: $7,000</span>
+                                                <span class="radio-group-sub-text">50 Pack: $12,000</span>
+                                            <!-- <span class="radio-group-sub-title">About Programs</span>
+                                            <span class="radio-group-sub-text">Some examples of programs are Boys Basketball, Girls Soccer, and
+                                                Orchestra. Few things to know about Programs are:</span>
+                                            <ul class="radio-group-list">
+                                                <li>
+                                                    Programs are their own ecosystem where only program members have access to the elements within
+                                                    that program, at access levels in line with their roles (coach, admin, user).
+                                                </li>
+                                                <li>
+                                                    Tag lists are created at the program level, meaning any tag lists created by an admin-level
+                                                    member is available to all other admins within that program (but not available for admins of other programs).
+                                                </li>
+                                                <li>
+                                                    Events/games are contained within the Program level, so users only see events/games relevant to them.
+                                                </li>
+                                                <li>Groups/Teams are contained within the Program level, so admin</li>
+                                            </ul> -->
+                                            <!-- <span class="radio-group-sub-text">Stats:</span>
+                                            <ul class="radio-group-list"> Stats:
+                                                <li>$600 per team</li>
+                                                <li>$35 per game</li>
+                                            </ul> -->
+                                            <span class="radio-group-sub-title">Stats:</span>
+                                                <span class="radio-group-sub-text">$600 per team</span>
+                                                <span class="radio-group-sub-text">$35 per game</span>
+                                            <span class="radio-group-sub-title">Scout:</span>
+                                                <span class="radio-group-sub-text">$500 per team</span>
+                                                <span class="radio-group-sub-text">$25 per game</span>
+                                            <span class="radio-group-sub-title">Stats + Scouts Bundle:</span>
+                                                <span class="radio-group-sub-text">$1,000  per team</span>
+                                                <span class="radio-group-sub-text">$50 per game</span>
+                                        </label>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="promo-code-wrap pro-plan">
+                    <h4 class="select-plan-title">Promo Code</h4>
+                    <div class="row form-wrap align-items-end">
+                        <div class="col-md-5">
+                            <div class="mb-2">
+                                <input type="email" name="promo_code" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-center w-100 align-items-center pt-3 pos-relative">
+                    <a href="javascript:void(0)" class="btn bottom-btn bg-grey" onclick="toggleDiv('.pricing-container','#plans')"><span><img src="./assets/images/pricing/prev.svg"></span>
+                        PREV</a>
+                    <a href="javascript:void(0)" class="btn bottom-btn bg-red org-info">NEXT <span><img src="./assets/images/pricing/next.svg">
+                        </span></a>
+                    <!-- <a class="skip cursor-pointer">SKIP</a> -->
+                </div>
+            </div>
+        </div>
+        </div>
+</body>
+</html>
+
